@@ -14,7 +14,7 @@ A React application built as an interview assignment for Momence company. This a
 
 ## Live Demo
 
-[View the application online](https://rolandhudak.com/momence)
+[View the application online](https://momence.rolandhudak.com)
 
 ## Getting started
 
