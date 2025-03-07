@@ -16,6 +16,14 @@ const StyledSelect = styled.select`
     border-radius: ${(props) => props.theme.inputs.radius};
     font-size: 1rem;
     font-family: inherit;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%23aaa" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 1rem;
+    color: ${(props) => props.theme.colors.black};
 `;
 
 export const Select = <T extends Readonly<string> | undefined>(
