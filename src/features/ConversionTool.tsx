@@ -1,6 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import { ConversionRate, fetchConversionRates } from 'services/api-client';
 import { Table, TableColumn } from 'components/Table';
+import { CurrencyConverter } from 'components/CurrencyConverter';
 
 export const ConversionToolFeature = () => {
     const { data } = useQuery({
@@ -19,7 +20,12 @@ export const ConversionToolFeature = () => {
     return (
         <>
             <h1>Currency Exchange App</h1>
-            {data && <Table data={data} columns={columns} />}
+            {data && (
+                <>
+                    <CurrencyConverter rates={data} />
+                    <Table data={data} columns={columns} />
+                </>
+            )}
         </>
     );
 };
