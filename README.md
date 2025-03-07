@@ -1,5 +1,49 @@
 # Currency Exchange App
 
+## Overview
+
+A React application built as an interview assignment for Momence company. This app displays currency exchange rates from the Czech National Bank and allows users to convert CZK to various currencies.
+
+## Tech Stack
+
+- React
+- TypeScript
+- Styled Components
+- React Query
+- Vite
+
+## Live Demo
+
+[View the application online](https://rolandhudak.com/momence)
+
+## Getting started
+
+This project was generated with [Vite](https://vite.dev/)
+
+Install dependencies
+
+```sh
+npm install
+```
+
+Start project in dev mode
+
+```sh
+npm run dev
+```
+
+Run tests
+
+```sh
+npm run test
+```
+
+Create production build
+
+```sh
+npm run build
+```
+
 ## Goal
 
 Create a simple React app (don’t use NextJS please), which:
