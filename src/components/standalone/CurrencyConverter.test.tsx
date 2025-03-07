@@ -43,7 +43,7 @@ describe('CurrencyConverter', () => {
         renderWithProviders(<CurrencyConverter rates={mockRates} />);
         expect(
             screen.getByText(
-                'Please enter a value and select currency to convert it to',
+                'Please enter a CZK amount and select a target currency',
             ),
         ).toBeInTheDocument();
     });
