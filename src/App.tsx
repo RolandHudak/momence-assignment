@@ -3,7 +3,7 @@ import { ThemeProvider } from 'styled-components';
 import { ConversionToolFeature } from 'features/ConversionTool';
 import { theme } from 'styles/theme';
 import { GlobalStyle } from 'styles/global';
-import { Layout } from 'components/Layout';
+import { Layout } from 'components/ui/Layout';
 
 const queryClient = new QueryClient();
 

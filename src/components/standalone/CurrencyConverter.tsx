@@ -1,7 +1,19 @@
 import { ChangeEvent, useMemo, useState } from 'react';
+import styled from 'styled-components';
 
-import { Select } from 'components/Select';
+import { Select } from 'components/ui/Select';
 import { ConversionRate } from 'services/api-client';
+import { Input } from 'components/ui/Input';
+
+const InputGroup = styled.div`
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+
+    @media (max-width: ${(props) => props.theme.breakpoints.md}) {
+        grid-template-columns: 1fr;
+    }
+`;
 
 interface Props {
     rates: ConversionRate[];
@@ -36,24 +48,26 @@ export const CurrencyConverter = (props: Props) => {
 
     return (
         <>
-            <input
-                type="number"
-                value={inputValue}
-                inputMode="decimal"
-                placeholder='Enter an amount in "CZK"'
-                onChange={handleInputChange}
-                data-testid="amount"
-            />
-            <Select
-                value={selectedCurrency}
-                onChange={setSelectedCurrency}
-                placeholder="Select a currency"
-                options={props.rates.map((e) => ({
-                    label: e.code,
-                    value: e.code,
-                }))}
-                testid="currency"
-            />
+            <InputGroup>
+                <Input
+                    type="number"
+                    value={inputValue}
+                    inputMode="decimal"
+                    placeholder='Enter an amount in "CZK"'
+                    onChange={handleInputChange}
+                    testid="amount"
+                />
+                <Select
+                    value={selectedCurrency}
+                    onChange={setSelectedCurrency}
+                    placeholder="Select a currency"
+                    options={props.rates.map((e) => ({
+                        label: e.code,
+                        value: e.code,
+                    }))}
+                    testid="currency"
+                />
+            </InputGroup>
             {selectedRate && inputValue ? (
                 <p data-testid="result">
                     {inputValue} <i>CZK</i> is{' '}

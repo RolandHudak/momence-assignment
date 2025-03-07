@@ -1,10 +1,14 @@
 import { useQuery } from '@tanstack/react-query';
+import { CurrencyConverter } from 'components/standalone/CurrencyConverter';
+import { Table, TableColumn } from 'components/ui/Table';
 import { ConversionRate, fetchConversionRates } from 'services/api-client';
-import { Table, TableColumn } from 'components/Table';
-import { CurrencyConverter } from 'components/CurrencyConverter';
 
 export const ConversionToolFeature = () => {
-    const { data } = useQuery({
+    const {
+        data: rates,
+        isLoading,
+        error,
+    } = useQuery({
         queryKey: ['conversion-rates'],
         queryFn: fetchConversionRates,
     });
@@ -20,12 +24,14 @@ export const ConversionToolFeature = () => {
     return (
         <>
             <h1>Currency Exchange App</h1>
-            {data && (
+            {rates && (
                 <>
-                    <CurrencyConverter rates={data} />
-                    <Table data={data} columns={columns} />
+                    <CurrencyConverter rates={rates} />
+                    <Table columns={columns} data={rates} />
                 </>
             )}
+            {isLoading && <p data-testid="loading">Loading...</p>}
+            {error && <p data-testid="error">Error: {error.message}</p>}
         </>
     );
 };
