@@ -75,7 +75,7 @@ export const CurrencyConverter = (props: Props) => {
                 </p>
             ) : (
                 <p data-testid="result">
-                    Please enter a value and select currency to convert it to
+                    Please enter a CZK amount and select a target currency
                 </p>
             )}
         </>
