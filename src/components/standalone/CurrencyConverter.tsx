@@ -55,7 +55,7 @@ export const CurrencyConverter = (props: Props) => {
                     inputMode="decimal"
                     placeholder='Enter an amount in "CZK"'
                     onChange={handleInputChange}
-                    testid="amount"
+                    $testid="amount"
                 />
                 <Select
                     value={selectedCurrency}
@@ -65,7 +65,7 @@ export const CurrencyConverter = (props: Props) => {
                         label: e.code,
                         value: e.code,
                     }))}
-                    testid="currency"
+                    $testid="currency"
                 />
             </InputGroup>
             {selectedRate && inputValue ? (

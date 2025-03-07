@@ -10,9 +10,9 @@ const StyledInput = styled.input`
 `;
 
 interface Props extends InputHTMLAttributes<HTMLInputElement> {
-    testid?: string;
+    $testid?: string;
 }
 
 export const Input = (props: Props) => {
-    return <StyledInput {...props} data-testid={props.testid} />;
+    return <StyledInput {...props} data-testid={props.$testid} />;
 };

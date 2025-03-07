@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 interface Props<T> {
-    testid?: string;
+    $testid?: string;
     placeholder?: string;
     options: { label: React.ReactNode; value: T }[];
     value?: T;
@@ -29,7 +29,7 @@ export const Select = <T extends Readonly<string> | undefined>(
         <StyledSelect
             value={props.value || ''}
             onChange={handleChange}
-            data-testid={props.testid}
+            data-testid={props.$testid}
         >
             <option value="" disabled>
                 {props.placeholder}
